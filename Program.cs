@@ -1,30 +1,10 @@
 ﻿// Loops intro
 
-//int counter = 0; // intitialze a counter varianble and assign it 0 as start
-//while(counter < 10) // conditionalize the while loop based on counter value
-//{
-//    Console.WriteLine("Counter is now " + counter); // do something :)
-//    counter++; // increment the counter
-//}
+string word = "morning";
 
+//Console.WriteLine(word[100]);
 
-// For loop
-
-// for(initialization; condition; incrementrule )
-
-for(int counter = 0; counter < 10; counter++)
+for (int i = 0; i < word.Length; i++)
 {
-    if (counter == 7)
-    {
-        break;
-    }
-
-    if (counter == 3)
-    {
-        continue;
-    }
-    Console.WriteLine("counter is now " + counter); // do something
+    Console.WriteLine(word[i]);
 }
-
-
-
