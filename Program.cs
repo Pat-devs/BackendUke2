@@ -1,15 +1,27 @@
 ﻿Console.Clear();
-// Loops intro
+/* Fizz buzz rules:
 
-string word = "morn"; // 4 characters.... dvs. 0,1,2,3
-// indexes are 0 based, not 1 based
+1. go through numbers 1-100
+2. If a number is divisible by 3, the student says “fizz” rather than the number.
+3. If a number is divisible by 5, they say “buzz” rather than the number.
+4. If a number is divisible by both, they say “fizz buzz”
+5. In all other cases just print out the number
 
+*/
 
-Console.WriteLine(word.Length - 1); // Gets the number of characters in the current string object.
+// Fizz buzz example soltion
 
-//Console.WriteLine(word[100]);
-
-for (int i = word.Length - 1; i >= 0; i--)
+for (int i = 1; i <= 100; i++)
 {
-    Console.Write(word[i]); 
+    Console.Write(i + ". ");
+    if (i % 3 == 0) // if no rest after division it means number is divisble by 3
+    {
+        Console.Write("Fizz");
+    }
+    if (i % 5 == 0)
+    {
+        Console.Write("Buzz");
+    }
+
+    Console.WriteLine();
 }
