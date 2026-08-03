@@ -14,6 +14,15 @@
 
 for(int counter = 0; counter < 10; counter++)
 {
+    if (counter == 7)
+    {
+        break;
+    }
+
+    if (counter == 3)
+    {
+        continue;
+    }
     Console.WriteLine("counter is now " + counter); // do something
 }
 
