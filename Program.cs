@@ -1,14 +1,21 @@
 ﻿// Loops intro
 
+//int counter = 0; // intitialze a counter varianble and assign it 0 as start
+//while(counter < 10) // conditionalize the while loop based on counter value
+//{
+//    Console.WriteLine("Counter is now " + counter); // do something :)
+//    counter++; // increment the counter
+//}
 
-while (true)
+
+// For loop
+
+// for(initialization; condition; incrementrule )
+
+for(int counter = 0; counter < 10; counter++)
 {
-    Console.WriteLine("Enter the lucky number!");
-    int userNumber = int.Parse(Console.ReadLine());
-    if (userNumber == 5)
-    {
-        break;
-    }
+    Console.WriteLine("counter is now " + counter); // do something
 }
 
-Console.WriteLine("Congratulations you entered the correct number!");
+
+
