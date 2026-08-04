@@ -1,24 +1,42 @@
 ﻿Console.Clear();
 
-// string products = "Coffee, Tea, Bread, Milk";
-
+// Products available:
 string[] products = { "Coffee", "Tea", "Bread", "Milk" }; // fixed type (f.eks: string), fixed length
 
-// print all products
-foreach (string product in products)
+// Users shooping cart:
+List<string> cart = new List<string>();
+
+// show initial greeting
+Console.WriteLine("Welcome to our shop.");
+
+// menu loop
+
+while(true)
 {
-    Console.WriteLine(product);
-}
+    Console.Clear();
+    Console.WriteLine("Products menu (enter a number)");
+    Console.WriteLine("1. List all products");
+    Console.WriteLine("2. List items in your cart");
+    Console.WriteLine("3. Exit");
 
-// List 
+    string command = Console.ReadLine(); // prompt user for input
 
-List<string> items = new List<string>();
+    if (command == "1")
+    {
+        Console.Clear();
+        Console.WriteLine("Our products:");
 
-items.Add("thing");
-items.Add("coffee");
-items.Add("laptop");
+        foreach (string product in products)
+        {
+            Console.WriteLine(product);
+        }
 
-foreach (var item in items)
-{
-    Console.WriteLine(item);
+        Console.WriteLine("Press enter to return to main menu.");
+        Console.ReadLine(); // pause the loop :)
+    }
+    if (command == "3")
+    {
+        Console.WriteLine("Byebye");
+        break;
+    }
 }
