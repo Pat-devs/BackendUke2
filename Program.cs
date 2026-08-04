@@ -9,3 +9,16 @@ foreach (string product in products)
 {
     Console.WriteLine(product);
 }
+
+// List 
+
+List<string> items = new List<string>();
+
+items.Add("thing");
+items.Add("coffee");
+items.Add("laptop");
+
+foreach (var item in items)
+{
+    Console.WriteLine(item);
+}
