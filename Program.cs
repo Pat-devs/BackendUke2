@@ -1,4 +1,52 @@
-﻿Console.Clear();
+﻿using System.Security.Cryptography;
+
+Console.Clear();
+
+
+
+// statisk funksjon som ikke returnerer noenting
+// statisk funksjon som returnerer void
+
+// basic greeting function:
+static void Greet()
+{
+    Console.WriteLine("Hello world!");
+}
+
+// invoke a function:
+Greet();
+
+// custom greeting 
+
+static void CustomGreet(string message)
+{
+    Console.WriteLine(message);
+}
+
+static void SomeOtherFunction(string message)
+{
+    foreach (char letter in message)
+    {
+        Console.WriteLine(letter);
+    }
+
+    
+    CustomGreet(message);
+}
+
+CustomGreet("Hei verden!");
+CustomGreet("Hvordan går det?");
+SomeOtherFunction("test");
+
+
+
+
+
+
+
+
+
+Console.ReadLine(); // for å stopppe resten av koden :)
 
 // Products available:
 string[] products = { "Coffee", "Tea", "Bread", "Milk" }; // fixed type (f.eks: string), fixed length
@@ -29,6 +77,19 @@ while(true)
         foreach (string product in products)
         {
             Console.WriteLine(product);
+        }
+
+        Console.WriteLine("Press enter to return to main menu.");
+        Console.ReadLine(); // pause the loop :)
+    }
+    if (command == "2")
+    {
+        Console.Clear();
+        Console.WriteLine("Items in your cart:");
+
+        foreach (string item in cart)
+        {
+            Console.WriteLine(item);
         }
 
         Console.WriteLine("Press enter to return to main menu.");
