@@ -13,14 +13,7 @@ Console.WriteLine("Welcome to our shop.");
 
 while(true)
 {
-    Console.Clear();
-    Console.WriteLine("Products menu (enter a number)");
-    Console.WriteLine("1. List all products");
-    Console.WriteLine("2. List items in your cart");
-    Console.WriteLine("3. Add an item to cart");
-    Console.WriteLine("4. Remove an item from cart");
-    Console.WriteLine("5. Remove all items from your cart");
-    Console.WriteLine("6. Exit");
+    ShowMenu();
 
     string command = Console.ReadLine(); // prompt user for input
 
@@ -49,6 +42,19 @@ while(true)
         Console.WriteLine("Byebye");
         break;
     }
+}
+
+// show the main menu
+static void ShowMenu()
+{
+    Console.Clear();
+    Console.WriteLine("Products menu (enter a number)");
+    Console.WriteLine("1. List all products");
+    Console.WriteLine("2. List items in your cart");
+    Console.WriteLine("3. Add an item to cart");
+    Console.WriteLine("4. Remove an item from cart");
+    Console.WriteLine("5. Remove all items from your cart");
+    Console.WriteLine("6. Exit");
 }
 
 // list all products
