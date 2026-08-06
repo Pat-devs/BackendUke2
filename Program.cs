@@ -34,7 +34,15 @@ while(true)
     }
     if (command == "3")
     {
-        AddItemToCart(cart, "test item");
+        AddItemToCart(cart, "test item"); // TODO: replace "test item" with actual item (based on user input)
+    }
+    if (command == "4")
+    {
+        RemoveItemFromCart(cart, "test item"); // TODO: replace "test item" with actual item (based on user input)
+    }
+    if (command == "5")
+    {
+        RemoveAllItemsFromCart(cart);
     }
     if (command == "6") // Exit
     {
@@ -79,4 +87,40 @@ static void ShowAllItemsInCart(List<string> cart)
 
     Console.WriteLine("Press enter to return to main menu.");
     Console.ReadLine(); // pause the loop :)
+}
+
+// add an item to cart
+static void AddItemToCart(List<string> cart, string item)
+{
+    cart.Add(item);
+}
+
+// remove an item from cart
+static void RemoveItemFromCart(List<string> cart, string item)
+{
+    bool removeSuccess = cart.Remove(item);
+    if (removeSuccess)
+    {
+        Console.WriteLine(item + " was removed from you cart. Press any key to return to main menu.");
+        Console.Read();
+    }
+    else
+    {
+        Console.WriteLine(item + " was NOT removed from you cart. Press any key to return to main menu.");
+        Console.Read();
+    }
+}
+
+// remove all items from cart
+static void RemoveAllItemsFromCart(List<string> cart)
+{
+    while (cart.Count > 0)
+    {
+        Console.WriteLine("Removed " + cart[0]);
+        // remove this item
+        cart.Remove(cart[0]);   
+    }
+
+    Console.WriteLine("Press enter to return to main menu.");
+    Console.Read();
 }
