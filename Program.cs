@@ -27,11 +27,42 @@ while(true)
     }
     if (command == "3")
     {
-        AddItemToCart(cart, "test item"); // TODO: replace "test item" with actual item (based on user input)
+        Console.WriteLine("Enter item name: ");
+        string itemName = Console.ReadLine();
+        bool isProductNameValid = ProductExists(products, itemName);
+
+        if (isProductNameValid) 
+        {
+            AddItemToCart(cart, itemName);
+            Console.WriteLine("You added " + itemName + " to your cart.");
+        }
+        else
+        {
+            Console.WriteLine("We don't have any " + itemName);
+        }
+
+        Console.WriteLine("Press any key to coninue");
+        Console.ReadLine();
     }
     if (command == "4")
     {
-        RemoveItemFromCart(cart, "test item"); // TODO: replace "test item" with actual item (based on user input)
+        Console.WriteLine("Enter item name: ");
+        string itemName = Console.ReadLine();
+        // bool isProductNameValid = ProductExists(products, itemName);
+        bool isProductNameInCart = ProductIsInCart(cart, itemName);
+        
+        if (isProductNameInCart) 
+        {
+            RemoveItemFromCart(cart, itemName);
+            Console.WriteLine("You removed " + itemName + " from your cart.");
+        }
+        else
+        {
+            Console.WriteLine("You dont have any " + itemName + " in your cart.");
+        }
+
+        Console.WriteLine("Press any key to coninue");
+        Console.ReadLine();
     }
     if (command == "5")
     {
@@ -129,4 +160,34 @@ static void RemoveAllItemsFromCart(List<string> cart)
 
     Console.WriteLine("Press enter to return to main menu.");
     Console.Read();
+}
+
+// check if product exists and return true or false based on that
+static bool ProductExists(string[] products, string itemName)
+{
+    foreach (string item in products)
+    {
+        if (item == itemName)
+        {
+            return true; // return statement also works as a "break"
+        }
+    }
+
+    // if we get this far, we can return false 
+    return false;
+}
+
+// check if product is in the cart and return true or false based on that
+static bool ProductIsInCart(List<string> cart, string itemName)
+{
+    foreach (string item in cart)
+    {
+        if (item == itemName)
+        {
+            return true; // return statement also works as a "break"
+        }
+    }
+
+    // if we get this far, we can return false 
+    return false;
 }
