@@ -12,7 +12,7 @@ static void Greet()
 }
 
 // invoke a function:
-Greet();
+// Greet();
 
 // custom greeting 
 
@@ -22,13 +22,29 @@ static void CustomGreet(string message1, string message2)
     Console.Write(message2 + "\n");
 }
 
-CustomGreet("Hei verden!", "hadet verden");
-CustomGreet("Hvordan går det?", "Jo, det går fint.");
+// CustomGreet("Hei verden!", "hadet verden");
+// CustomGreet("Hvordan går det?", "Jo, det går fint.");
 
+// a method that takes a text and a number as paramters so that it can print that message a number of times.
 
+// example use: GreetNumberOfTimes("hei", 5) // output: hei, hei, hei, hei, hei
 
+static void GreetNumberOfTimes(string text, int repeatTimes)
+{
+    // for loop solution
+    for (int i = 0; i < repeatTimes; i++)
+    {
+        // Console.Write(text + ", ");  
+    } 
+    // while loop solution
+    while(repeatTimes > 0)
+    {
+        Console.Write(text + ", ");  
+        repeatTimes--;
+    }
+}
 
-
+GreetNumberOfTimes("hei", 5);
 
 
 
