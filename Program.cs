@@ -1,6 +1,4 @@
-﻿using System.Security.Cryptography;
-
-Console.Clear();
+﻿Console.Clear();
 
 
 
@@ -18,25 +16,14 @@ Greet();
 
 // custom greeting 
 
-static void CustomGreet(string message)
+static void CustomGreet(string message1, string message2)
 {
-    Console.WriteLine(message);
+    Console.Write(message1 + " ");
+    Console.Write(message2 + "\n");
 }
 
-static void SomeOtherFunction(string message)
-{
-    foreach (char letter in message)
-    {
-        Console.WriteLine(letter);
-    }
-
-    
-    CustomGreet(message);
-}
-
-CustomGreet("Hei verden!");
-CustomGreet("Hvordan går det?");
-SomeOtherFunction("test");
+CustomGreet("Hei verden!", "hadet verden");
+CustomGreet("Hvordan går det?", "Jo, det går fint.");
 
 
 
